@@ -1,0 +1,6 @@
+What is wrong with Ball.java? Please fix the problems with Ball.java and document
+your work in problem4.txt. 
+
+There were a few things wrong in Ball.java. The first issue was in the constructor. 
+In the constructor color was set to color and volume was set to volume. This is incorrect. 
+We needed to say this.color and this.volume to refer to the class variable of Ball. 

@@ -21,12 +21,14 @@
 	     * @throws IllegalArgumentException if <code>n</code> is not a nonnegative number
 	     */
 	    public int getFibTerm(int n) {
-	        if (n <= 0) {
+	    	//changed <= to < 
+	        if (n < 0) {
 	            throw new IllegalArgumentException(n + " is negative");
 	        } else if (n <= 2) {
 	            return 1;
 	        } else {
-	            return getFibTerm(n + 1) - getFibTerm(n - 2);
+	            return getFibTerm(n - 1) - getFibTerm(n - 2);
+	            //changed n + 1 to n - 1
 	        }
 	    }
 	

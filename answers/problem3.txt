@@ -1,0 +1,6 @@
+1. Why did Fibonacci fail the testThrowsIllegalArgumentException test? What did you have to do to fix it?
+- 
+2. Why did Fibonacci fail the testBaseCase test? What (if anything) did you have to do to fix it?
+-
+3. Why did Fibonacci fail the testInductiveCase test? What (if anything) did you have to do to fix it? 
+-
