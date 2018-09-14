@@ -3,4 +3,17 @@ your work in problem4.txt.
 
 There were a few things wrong in Ball.java. The first issue was in the constructor. 
 In the constructor color was set to color and volume was set to volume. This is incorrect. 
-We needed to say this.color and this.volume to refer to the class variable of Ball. 
+We needed to say this.color and this.volume to refer to the Ball's class variable of color and volume.
+Another thing were the actual methods getVolume() and getColor(). getVolume() was returning zero when 
+it should've returned the value of our class variable volume, which is obtained using this.volume.
+getColor() was returning null when it should've returned the value of our class variable color, 
+which is obtained using this.color.
+
+There are two obvious approaches to implementing getVolume():
+• Every time getVolume() is called, go through all the Balls in the Set and add
+up the volumes. (Hint: one solution might be to use a for-each loop to extract
+Balls from the Set.)
+• Keep track of the total volume of the Balls in BallContainer whenever Balls
+are added and removed. This eliminates the need to perform any computations
+when getVolume() is called.
+Which approach do you think is the better one? Why?

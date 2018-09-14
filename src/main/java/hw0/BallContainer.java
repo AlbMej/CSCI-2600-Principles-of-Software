@@ -8,6 +8,7 @@ import java.util.Set;
 import java.util.LinkedHashSet;
 import java.util.Iterator;
 import java.util.Collections;
+import java.util.HashSet;
 
 /**
  * This is a container can be used to contain balls.
@@ -17,12 +18,16 @@ public class BallContainer implements Iterable<Ball> {
 
     // Contents of the BallContainer.
     private Set<Ball> contents;
+	private HashSet colors;
+	private double totalVolume;
 
     /**
      * Constructor that creates a new ball container.
      */
     public BallContainer() {
         contents = new LinkedHashSet<Ball>();
+        colors = new HashSet<Ball>();
+        totalVolume = 0;
     }
 
     /**
@@ -53,9 +58,18 @@ public class BallContainer implements Iterable<Ball> {
      * already in the container
      */
     public boolean add(Ball b) {
-        // Your code goes here.  Remove the exception after you're done.
-        throw new RuntimeException("Method not implemented");
-    }
+        if (this.contents.contains(b)) {
+        	return false;
+        }
+        else{
+        	this.contents.add(b);
+        	if (!this.colors.contains(b.getColor())) {
+        		this.colors.add(b);
+        	}
+        	this.totalVolume = this.totalVolume + b.getVolume();
+        	    return true;  
+        }
+        }
 
     /**
      * Removes a ball from the container. This method returns
@@ -70,7 +84,14 @@ public class BallContainer implements Iterable<Ball> {
      */
     public boolean remove(Ball b) {
         // Your code goes here.  Remove the exception after you're done.
-        throw new RuntimeException("Method not implemented");
+        if (this.contents.contains(b)) {
+        	this.contents.remove(b);
+        	this.totalVolume = this.totalVolume - b.getVolume();
+        	return true;
+        }
+        else {
+        	return false;
+        }
     }
 
     /**
@@ -80,7 +101,7 @@ public class BallContainer implements Iterable<Ball> {
      */
     public double getVolume() {
         // Your code goes here.  Remove the exception after you're done.
-        throw new RuntimeException("Method not implemented");
+        return this.totalVolume;
     }
 
     /**
@@ -89,7 +110,7 @@ public class BallContainer implements Iterable<Ball> {
      */
     public int size() {
         // Your code goes here.  Remove the exception after you're done.
-        throw new RuntimeException("Method not implemented");
+        return this.contents.size();
     }
     
     /**
@@ -98,7 +119,7 @@ public class BallContainer implements Iterable<Ball> {
      */
     public int differentColors() {
         // Your code goes here.  Remove the exception after you're done.
-        throw new RuntimeException("Method not implemented");
+        return this.colors.size();
     }
     
     /**
@@ -109,7 +130,7 @@ public class BallContainer implements Iterable<Ball> {
      */
     public boolean areSameColor() {
         // Your code goes here.  Remove the exception after you're done.
-        throw new RuntimeException("Method not implemented");
+        return this.colors.size() == 0 || this.colors.size() == 1;
     }
 
     /**
@@ -117,7 +138,9 @@ public class BallContainer implements Iterable<Ball> {
      */
     public void clear() {
         // Your code goes here.  Remove the exception after you're done.
-        throw new RuntimeException("Method not implemented");
+        this.contents.clear();
+        this.totalVolume = 0;
+        this.colors.clear();
     }
 
     /**
@@ -129,7 +152,7 @@ public class BallContainer implements Iterable<Ball> {
      */
     public boolean contains(Ball b) {
         // Your code goes here.  Remove the exception after you're done.
-        throw new RuntimeException("Method not implemented");
+        return this.contents.contains(b);
     }
 
 }
