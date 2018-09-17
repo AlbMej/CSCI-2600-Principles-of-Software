@@ -1,6 +1,13 @@
 1. Why did Fibonacci fail the testThrowsIllegalArgumentException test? What did you have to do to fix it?
-- 
+- It failed because it tested the function with zero and the conditional in the Fibonacci
+function said to throw an IllegalArgumentException if n <= to 0. Which was wrong because 0
+is not a negative number so I had to change it from <= to just <. 
 2. Why did Fibonacci fail the testBaseCase test? What (if anything) did you have to do to fix it?
--
+- It failed this test case because of the incorrect nonegative check. 0 is on of the base cases
+for Fibonacci but it raised an IllegalArgumentException because the code said n <= 0 is negative. 
+Same solution as the previous question, changing n <= 0 to n < 0 solved the problem.  
 3. Why did Fibonacci fail the testInductiveCase test? What (if anything) did you have to do to fix it? 
--
+- Fibonacci failed this one because the recusive formula was incorrect. It described the 
+formula as the following: getFibTerm(n + 1) - getFibTerm(n - 2) when in fact the correct
+formula is: getFibTerm(n - 1) + getFibTerm(n - 2). So I had to change both minus signs to 
+pluses to fix this issue. 

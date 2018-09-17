@@ -31,7 +31,7 @@ public class BallTest {
 	
 	@Test
 	public void testCreateWithValidStringVolume() {
-		String volume = "21.4e2";
+		String volume = "2l.4e2";
 		assertEquals("new(" + volume + ").getVolume()", Double.parseDouble(volume),
 				new Ball(volume, Color.WHITE).getVolume(), JUNIT_DOUBLE_DELTA);
 	}

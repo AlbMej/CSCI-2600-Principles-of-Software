@@ -17,3 +17,23 @@ Balls from the Set.)
 are added and removed. This eliminates the need to perform any computations
 when getVolume() is called.
 Which approach do you think is the better one? Why?
+Approach #2 is better for the following reasons. For apporach number too, the runtime 
+is always linear with respect to the size of BallContainer. We must always iterate through 
+the BallContainer and add up the volumes to figure out the total volume. Approach #2 is more
+efficient as we always hold the current total volume at all times. 
+
+There are many ways to implement getBallsFromSmallest(). Briefly describe at least
+two different ways. Your answers should differ in the implementation of Box, not in lowerlevel
+implementation (for example, using an insertion sort instead of a selection sort is a
+lower-level implementation because it does not affect how Box is implemented). Hint: think
+about different places in the Box class where you could add code to achieve the desired
+functionality.
+- One way to implement getBallsFromSmallest() is too copy all of the balls in BallContainer 
+to an ArrayList and sort that ArrayList with a comparator. 
+- Another way to implement getBallsFromSmallest() is to sort them whenever we add a new ball. 
+This could be done by adding into a Binary Search Tree for example, or we could use a TreeSet 
+in Java. 
+• Which of the above ways do you think is the best? Why? 
+I am not sure which is exactly better but it might depend on the input and the number of 
+items we add. So it could go either way. Although, I'd say the first approach is more straight 
+forward and probably easier to implement. 

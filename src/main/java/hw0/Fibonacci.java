@@ -20,6 +20,7 @@
 	     * @return the <var>n</var>th term in the Fibonacci sequence
 	     * @throws IllegalArgumentException if <code>n</code> is not a nonnegative number
 	     */
+		
 	    public int getFibTerm(int n) {
 	    	//changed <= to < 
 	        if (n < 0) {
