@@ -30,7 +30,15 @@ public class Ball {
      * @param volume A string representing the volume of the new object.
      */
     public Ball(String volume, Color color)  {
-    	this(isValid(volume), color);
+    	this.color = color;
+    	try  
+    	  {  
+    		this.volume = Double.parseDouble(volume); 
+    	  }  
+    	  catch(NumberFormatException nfe)  
+    	  {  
+    		this.volume = 0;
+    	  } 
     	}   
     
     public static double isValid(String strNum) {
@@ -40,7 +48,7 @@ public class Ball {
   	  }  
   	  catch(NumberFormatException nfe)  
   	  {  
-  		return Double.parseDouble(strNum);
+  		return 0;
   	  }  
     }
     /**
