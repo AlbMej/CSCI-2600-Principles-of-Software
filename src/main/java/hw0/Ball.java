@@ -22,16 +22,17 @@ public class Ball {
     public Ball(double volume, Color color) {
         this.volume = volume;
         this.color = color;
+        
     }
     
     /**
      * Constructor that creates a new ball object with the specified volume given by a string.
      * @param volume A string representing the volume of the new object.
      */
-    public Ball(String volume, Color color) {
-		this(Double.parseDouble(volume), color);
+    public Ball(String volume, Color color)  {
+    	this(Double.parseDouble(volume), color);
     }    
-
+    
     /**
      * Returns the volume of the ball.
      * @return the volume of the ball.
