@@ -30,9 +30,19 @@ public class Ball {
      * @param volume A string representing the volume of the new object.
      */
     public Ball(String volume, Color color)  {
-    	this(Double.parseDouble(volume), color);
-    }    
+    	this(isValid(volume), color);
+    	}   
     
+    public static double isValid(String strNum) {
+    	try  
+  	  {  
+  		return Double.parseDouble(strNum);  
+  	  }  
+  	  catch(NumberFormatException nfe)  
+  	  {  
+  		return Double.parseDouble(strNum);
+  	  }  
+    }
     /**
      * Returns the volume of the ball.
      * @return the volume of the ball.

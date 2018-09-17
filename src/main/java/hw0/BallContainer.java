@@ -10,7 +10,6 @@ import java.util.LinkedHashSet;
 import java.util.Iterator;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 
 /**
  * This is a container can be used to contain balls.
