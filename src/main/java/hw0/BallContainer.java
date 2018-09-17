@@ -3,11 +3,13 @@
  */
 package hw0;
 
+import java.awt.Color;
 import java.lang.Iterable;
 import java.util.Set;
 import java.util.LinkedHashSet;
 import java.util.Iterator;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 
 /**
@@ -18,7 +20,7 @@ public class BallContainer implements Iterable<Ball> {
 
     // Contents of the BallContainer.
     private Set<Ball> contents;
-	private HashSet colors;
+	private HashMap<Color, Integer> colors;
 	private double totalVolume;
 
     /**
@@ -26,7 +28,7 @@ public class BallContainer implements Iterable<Ball> {
      */
     public BallContainer() {
         contents = new LinkedHashSet<Ball>();
-        colors = new HashSet<Ball>();
+        colors = new HashMap<Color, Integer>();
         totalVolume = 0;
     }
 
@@ -62,12 +64,10 @@ public class BallContainer implements Iterable<Ball> {
         	return false;
         }
         else{
+        	this.colors.put(b.getColor(), this.colors.getOrDefault(b.getColor(), 0) + 1);
         	this.contents.add(b);
-        	if (!this.colors.contains(b.getColor())) {
-        		this.colors.add(b);
-        	}
         	this.totalVolume = this.totalVolume + b.getVolume();
-        	    return true;  
+        	return true;  
         }
         }
 
@@ -85,6 +85,12 @@ public class BallContainer implements Iterable<Ball> {
     public boolean remove(Ball b) {
         // Your code goes here.  Remove the exception after you're done.
         if (this.contents.contains(b)) {
+        	if (this.colors.get(b.getColor()) == 1) {
+        		this.colors.remove(b.getColor());
+        	}
+        	else {
+        		this.colors.put(b.getColor(), this.colors.getOrDefault(b.getColor(), 0) + 1);
+        	}
         	this.contents.remove(b);
         	this.totalVolume = this.totalVolume - b.getVolume();
         	return true;
