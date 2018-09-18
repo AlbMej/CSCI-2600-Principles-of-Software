@@ -37,3 +37,12 @@ in Java.
 I am not sure which is exactly better but it might depend on the input and the number of 
 items we add. So it could go either way. Although, I'd say the first approach is more straight 
 forward and probably easier to implement. 
+
+CHANGES MADE TO BallContainer.java OR Ball.java
+BallContainer.java
+-Added a HashMap to keep track of the colors of the balls
+-I also added a totalVolume variable and kept track of the total volume that way. 
+Ball.java
+-Removed the line this(Double.parsedouble(volume), color) and added some exception handling
+with a try and catch block. I did this because invalid input was being passed in and an exception
+was being thrown because volume convertible to a double. 
